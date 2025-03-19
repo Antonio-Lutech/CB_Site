@@ -2,6 +2,15 @@ function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function isEmpty(value) {
+    return (
+        value == null || // Controlla null e undefined
+        (typeof value === "string" && value.trim() === "") || // Stringa vuota
+        (Array.isArray(value) && value.length === 0) || // Array vuoto
+        (typeof value === "object" && value !== null && Object.keys(value).length === 0) // Oggetto vuoto
+    );
+}
+
 const msalConfig = {
     auth: {
         clientId: "91eaa7a2-f3c1-45e3-9aff-e4bff5b6ac86",  // Sostituisci con l'ID della tua app registrata
@@ -34,7 +43,7 @@ async function login() {
                 throw error;
             }
         }
-        console.log('Token: ' + tokenResponse.accessToken);
+        console.log('Token trovato: ' + !isEmpty(tokenResponse.accessToken));
         document.getElementById("loadingSpinner").style.display = "none"; // Nasconde il caricamento
         await startChatbot(tokenResponse.accessToken);
     } catch (error) {
