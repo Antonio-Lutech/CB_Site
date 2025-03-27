@@ -15,7 +15,7 @@ const msalConfig = {
     auth: {
         clientId: "91eaa7a2-f3c1-45e3-9aff-e4bff5b6ac86",  // Sostituisci con l'ID della tua app registrata
         authority: "https://login.microsoftonline.com/11f69417-75e5-4be6-8343-eee7285f51d4", // Per login multi-tenant
-        redirectUri: "http://localhost:5500"
+        redirectUri: "https://jolly-glacier-03b09a103.6.azurestaticapps.net/"
     }
 };
 
