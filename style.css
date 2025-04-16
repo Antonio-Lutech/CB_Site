@@ -13,8 +13,8 @@ p {
 }
 .chat-container {
     width: 100%;
-    max-width: 400px; /* Larghezza massima per mantenere il formato verticale */
-    height: 600px; /* Altezza verticale */
+    max-width: 450px; /* Larghezza massima per mantenere il formato verticale */
+    height: 650px; /* Altezza verticale */
     margin: 20px auto;
     border: 1px solid #ccc;
     border-radius: 10px;

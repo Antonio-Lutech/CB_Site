@@ -23,6 +23,7 @@ const msalInstance = new msal.PublicClientApplication(msalConfig);
 const loginRequest = { scopes: ["User.Read"] };
 
 async function login() {
+    /*
     try {
         let account = msalInstance.getActiveAccount();
         if (!account) {
@@ -49,6 +50,10 @@ async function login() {
     } catch (error) {
         console.error("Errore di autenticazione:", error);
     }
+    */
+    await wait(1000);        
+    document.getElementById("loadingSpinner").style.display = "none"; // Nasconde il caricamento
+    await startChatbot('');
 }
 
 async function startChatbot(token) {
